@@ -6,6 +6,7 @@ use Request;
 use App\lembur_pegawaim;
 use App\kategori_lemburm;
 use App\pegawaim;
+use App\tunjanganm;
 
 class lemburpegawaic extends Controller
 {
@@ -71,7 +72,8 @@ class lemburpegawaic extends Controller
     {
         //
         $lemburpegawaiv=lembur_pegawaim::find($id);
-        return view('lemburpegawai.edit', compact('lemburpegawaiv'));
+        $tunjanganv=tunjanganm::find($id);
+        return view('lemburpegawai.edit', compact('lemburpegawaiv', 'tunjanganv'));
     }
 
     /**

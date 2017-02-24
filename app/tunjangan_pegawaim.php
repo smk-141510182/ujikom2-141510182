@@ -24,5 +24,10 @@ class tunjangan_pegawaim extends Model
 	public function penggajian()
     {
     	return $this->hasMany('App\penggajianm','tunjangan_pegawai_id');
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User','user_id');
     }    
 }

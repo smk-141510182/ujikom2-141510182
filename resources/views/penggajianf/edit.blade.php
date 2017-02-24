@@ -3,12 +3,11 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Edit Penggajian</div>
 
                 <div class="panel-body">
-                    <a href="{{url('/Penggajian')}}" class="btn btn-success btn-block">Kembali</a><br>
+                    <a href="{{url('/Penggajian')}}" class="btn btn-md btn-block">Kembali</a><br>
                     {!! Form::model($penggajianv,['method'=>'PATCH','route'=>['Penggajian.update',$penggajianv->id]])!!}
                     <div class="form-group">
                         {!! Form::label('Tunjangan Pegawai Id','Tunjangan Pegawai Id')!!}
@@ -42,9 +41,9 @@
                         {!! Form::label('Petugas Penerima','Petugas Penerima')!!}
                         {!! Form::text('petugas_penerima',null,['class'=>'form-control'])!!}
                     </div>
-                    <div class="form-group">
-                        {!! Form::submit('update',['class'=>'btn btn-success form-control'])!!}
-                    </div>
+                    <button type="submit" class="btn btn-success">
+                                    Update
+                                </button>
                     {!! Form::close()!!}
                 </div>
             </div>

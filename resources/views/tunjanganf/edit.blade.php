@@ -5,38 +5,44 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Edit Data</div>
+                <div class="panel-heading">Edit Tunjangan</div>
 
                 <div class="panel-body">
-                    <a href="{{url('/Tunjangan')}}" class="btn btn-success btn-block">Kembali</a><br>
-                    {!! Form::model($tunjanganv,['method'=>'PATCH','route'=>['Tunjangan.update',$tunjanganv->id]])!!}
+                {!! Form::model($tunjanganv,['method'=>'PATCH','route'=>['Tunjangan.update',$tunjanganv->id]])!!}
                     <div class="form-group">
                         {!! Form::label('Kode Tunjangan','Kode Tunjangan')!!}
                         {!! Form::text('kode_tunjangan',null,['class'=>'form-control'])!!}
                     </div>
-                    <div class="form-group">
-                        {!! Form::label('Nama Jabatan','Nama Jabatan')!!}
-                        {!! Form::text('nama_jabatan',null,['class'=>'form-control'])!!}
-                    </div>
-                    <div class="form-group">
-                        {!! Form::label('Nama Golongan','Nama Golongan')!!}
-                        {!! Form::text('nama_golongan',null,['class'=>'form-control'])!!}
-                    </div>
+                    <label>Nama Jabatan</label>
+                    <select name="jabatan_id" class="form-control" required>
+                        
+                        @foreach($jabatanv as $data)
+                        <option value="{{$data->id}}">{{$data->nama_jabatan}}</option>
+                        @endforeach
+                    </select><br>
+
+                    <label>Nama Golongan</label>
+                    <select name="golongan_id" class="form-control" required>
+                        @foreach($golonganv as $data)
+                        <option value="{{$data->id}}">{{$data->nama_golongan}}</option>
+                        @endforeach
+                    </select><br>
+                    
                     <div class="form-group">
                         {!! Form::label('Status','Status')!!}
-                        {!! Form::text('status',null,['class'=>'form-control'])!!}
+                        {!! Form::text('status',null,['class'=>'form-control','required'])!!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('Jumlah_anak','Jumlah_anak')!!}
-                        {!! Form::text('jumlah_anak',null,['class'=>'form-control'])!!}
+                        {!! Form::label('Jumlah Anak','Jumlah Anak')!!}
+                        {!! Form::text('jumlah_anak',null,['class'=>'form-control','required'])!!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('Besaran Uang','Besaran Uang')!!}
-                        {!! Form::text('besaran_uang',null,['class'=>'form-control'])!!}
+                        {!! Form::text('besaran_uang',null,['class'=>'form-control','required'])!!}
                     </div>
-                    <div class="form-group">
-                        {!! Form::submit('update',['class'=>'btn btn-success form-control'])!!}
-                    </div>
+                    <button type="submit" class="btn btn-success">
+                                    Update
+                                </button>
                     {!! Form::close()!!}
                 </div>
             </div>

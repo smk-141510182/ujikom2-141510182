@@ -70,8 +70,10 @@ class tunjanganc extends Controller
     public function edit($id)
     {
         //
-        $tunjanganv=tunjanganm::find($id);
-        return view('tunjanganf.edit', compact('tunjanganv'));
+        $tunjanganv = tunjanganm::find($id);
+        $jabatanv = jabatanm::all();
+        $golonganv = golonganm::all();
+        return view('tunjanganf.edit', compact('tunjanganv', 'jabatanv', 'golonganv'));
     }
 
     /**

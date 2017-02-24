@@ -5,26 +5,37 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Edit Lembur Pegawai</div>
+                <div class="panel-heading">Edit Tunjangan</div>
 
                 <div class="panel-body">
-                    <a href="{{url('/LemburPegawai')}}" class="btn btn-success btn-block">Kembali</a><br>
-                    {!! Form::model($lemburpegawaiv,['method'=>'PATCH','route'=>['LemburPegawai.update',$lemburpegawaiv->id]])!!}
+                {!! Form::model($tunjanganv,['method'=>'PATCH','route'=>['Tunjangan.update',$tunjanganv->id]])!!}
+                    
+                    <label>Nama Lembur</label>
+                    <select name="kode_lembur_id" class="form-control" required>
+                        
+                        @foreach($kode_lemburv as $data)
+                        <option value="{{$data->id}}">{{$data->kode_lembur}}</option>
+                        @endforeach
+                    </select><br>
+
                     <div class="form-group">
-                        {!! Form::label('Kode Lembur Id','Kode Lembur Id')!!}
-                        {!! Form::text('kode_lembur_id',null,['class'=>'form-control'])!!}
-                    </div>
+                            <label for="pegawai_id" class="form-group">Nama Pegawai</label>
+                            <div class="form-group">
+                                <select name="pegawai_id" class="form-control">
+                                    <option value="{{ $lemburpegawaiv->pegawaim->User->name }}">Nama Pegawai -- {{ $lemburpegawaiv->pegawaim->User->name }}</option>
+                                    @foreach($pegawaiv as $data)
+                                    <option value="{{$data->id}}">{{$data->User->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                     <div class="form-group">
-                        {!! Form::label('Pegawai Id','Pegawai Id')!!}
-                        {!! Form::text('pegawai_id',null,['class'=>'form-control'])!!}
+                        {!! Form::label('Besaran Uang','Besaran Uang')!!}
+                        {!! Form::text('besaran_uang',null,['class'=>'form-control','required'])!!}
                     </div>
-                    <div class="form-group">
-                        {!! Form::label('Jumlah Jam','Jumlah Jam')!!}
-                        {!! Form::text('jumlah_jam',null,['class'=>'form-control'])!!}
-                    </div>
-                    <div class="form-group">
-                        {!! Form::submit('update',['class'=>'btn btn-success form-control'])!!}
-                    </div>
+                    <button type="submit" class="btn btn-success">
+                                    Update
+                                </button>
                     {!! Form::close()!!}
                 </div>
             </div>

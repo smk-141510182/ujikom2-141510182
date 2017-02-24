@@ -3,12 +3,11 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Edit Golongan</div>
 
                 <div class="panel-body">
-                    <a href="{{url('/Golongan')}}" class="btn btn-success btn-block">Kembali</a><br>
+                    <a href="{{url('/Golongan')}}" class="btn btn-md btn-block">Kembali</a>
                     {!! Form::model($golonganv,['method'=>'PATCH','route'=>['Golongan.update',$golonganv->id]])!!}
                     <div class="form-group">
                         {!! Form::label('Kode Golongan','Kode Golongan')!!}
@@ -22,9 +21,9 @@
                         {!! Form::label('Besaran Uang','Besaran Uang')!!}
                         {!! Form::text('besaran_uang',null,['class'=>'form-control'])!!}
                     </div>
-                    <div class="form-group">
-                        {!! Form::submit('update',['class'=>'btn btn-success form-control'])!!}
-                    </div>
+                    <button type="submit" class="btn btn-success">
+                                    Update
+                                </button>
                     {!! Form::close()!!}
                 </div>
             </div>

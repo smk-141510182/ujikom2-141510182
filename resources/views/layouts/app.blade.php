@@ -47,10 +47,11 @@
                         <li><a href="{{ url('/Jabatan') }}">Jabatan</a></li>
                         <li><a href="{{ url('/Golongan') }}">Golongan</a></li>
                         <li><a href="{{ url('/Tunjangan') }}">Tunjangan</a></li>
-                        <li><a href="{{ url('/TunjanganPegawai') }}">Tunjangan Pegawai</a></li>
                         <li><a href="{{ url('/Pegawai') }}">Pegawai</a></li>
-                        <li><a href="{{ url('/KategoriLembur') }}">Kategori Lembur</a></li>
+
+                        <li><a href="{{ url('/TunjanganPegawai') }}">Tunjangan Pegawai</a></li>
                         <li><a href="{{ url('/LemburPegawai') }}">Lembur Pegawai</a></li>
+                        <li><a href="{{ url('/KategoriLembur') }}">Kategori Lembur</a></li>
                         <li><a href="{{ url('/Penggajian') }}">Penggajian</a></li>
                     </ul>
 

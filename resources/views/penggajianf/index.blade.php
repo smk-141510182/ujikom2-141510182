@@ -3,12 +3,11 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Penggajian</div>
 
                 <div class="panel-body">
-                    <a href="{{url('/Penggajian/create')}}" class="btn btn-success btn-block">Tambah penggajian</a><br>
+                    <a href="{{url('/Penggajian/create')}}" class="btn btn-md btn-block">Tambah penggajian</a><br>
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>

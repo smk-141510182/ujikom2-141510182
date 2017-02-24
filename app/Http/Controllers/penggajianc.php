@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Request;
 use App\penggajianm;
 use App\tunjangan_pegawaim;
+use App\pegawaim;
 
 class penggajianc extends Controller
 {
@@ -30,7 +31,8 @@ class penggajianc extends Controller
     {
         //
         $tunjanganpegawaiv=tunjangan_pegawaim::all();
-        return view('penggajianf.create', compact('tunjangan_pegawaim'));
+        $pegawaiv=pegawaim::all();
+        return view('penggajianf.create', compact('tunjanganpegawaiv', 'pegawaiv'));
     }
 
     /**

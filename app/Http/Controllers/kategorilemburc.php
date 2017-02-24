@@ -17,9 +17,9 @@ class kategorilemburc extends Controller
     public function index()
     {
         //
-        $kategorilemburv=kategori_lemburm::all();
-        $jabatanv=jabatanm::all();
-        $golonganv=golonganm::all();
+        $kategorilemburv = kategori_lemburm::all();
+        $jabatanv = jabatanm::all();
+        $golonganv = golonganm::all();
         return view('kategorilemburf.index', compact('kategorilemburv', 'jabatanv', 'golonganv'));
     }
 
@@ -31,8 +31,8 @@ class kategorilemburc extends Controller
     public function create()
     {
         //
-        $jabatanv=jabatanm::all();
-        $golonganv=golonganm::all();
+        $jabatanv = jabatanm::all();
+        $golonganv = golonganm::all();
         return view('kategorilemburf.create', compact('jabatanv', 'golonganv'));
     }
 
@@ -45,9 +45,9 @@ class kategorilemburc extends Controller
     public function store(Request $request)
     {
         //
-        $kategorilemburv=Request::all();
+        $kategorilemburv = Request::all();
         kategori_lemburm::create($kategorilemburv);
-        return redirect ('KategoriLembur');
+        return redirect('KategoriLembur');
     }
 
     /**
@@ -70,8 +70,10 @@ class kategorilemburc extends Controller
     public function edit($id)
     {
         //
-        $kategorilemburv=kategori_lemburm::find($id);
-        return view('jabatanf.edit', compact('jabatanv'));
+        $kategorilemburv = kategori_lemburm::find($id);
+        $jabatanv = jabatanm::all();
+        $golonganv = golonganm::all();
+        return view('kategorilemburf.edit', compact('kategorilemburv', 'jabatanv', 'golonganv'));
     }
 
     /**
@@ -84,9 +86,9 @@ class kategorilemburc extends Controller
     public function update(Request $request, $id)
     {
         //
-        $kategorilemburupdate = Request::all();
-        $kategorilemburv= kategori_lemburm::find($id);
-        $kategorilemburv->update($kategorilemburupdate);
+        $kategoriUpdate = Request::all();
+        $kategorilemburv = kategori_lemburm::find($id);
+        $kategorilemburv->update($kategoriUpdate);
         return redirect('KategoriLembur');
     }
 
